@@ -8,6 +8,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
 import { useNavigate, useLocation } from 'react-router'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: [
+            'Gill Sans'
+        ].join(','),
+    },
+});
 
 const drawerWidth = 240
 
@@ -49,43 +58,44 @@ export default function Layout({ children }) {
     ]
 
     return (
-        <div className={classes.root}>
-            {/* app bar */}
+        <ThemeProvider theme={theme}>
+            <div className={classes.root}>
+                {/* app bar */}
 
-            {/* side drawer */}
-            <Drawer
-                className={classes.drawer}
-                variant='permanent'
-                anchor='left'
-                classes={{ paper: classes.drawerPaper }}
-            >
-                <div>
-                    <Typography variant='h4'>
-                        Crypto Bears
-                    </Typography>
+                {/* side drawer */}
+                <Drawer
+                    className={classes.drawer}
+                    variant='permanent'
+                    anchor='left'
+                    classes={{ paper: classes.drawerPaper }}
+                >
+                    <div style={{ "padding": "10px" }}>
+                        <Typography variant="h4" gutterBottom>
+                            Crypto Bears
+                        </Typography>
+                    </div>
+
+                    {/* list / links */}
+                    <List>
+                        {menuItems.map(item => (
+                            <ListItem 
+                                button 
+                                key={item.text}
+                                onClick={() => navigate(item.path, { replace: true })}
+                                className={location.pathname == item.path ? classes.active : null}
+                            >
+                                <ListItemIcon>{item.icon}</ListItemIcon>
+                                <ListItemText primary={item.text} />
+                            </ListItem>
+                        ))}
+                    </List>
+
+                </Drawer>
+
+                <div className={classes.page}>
+                    {children}
                 </div>
-
-                {/* list / links */}
-                <List>
-                    {menuItems.map(item => (
-                        <ListItem 
-                            button 
-                            key={item.text}
-                            onClick={() => navigate(item.path, { replace: true })}
-                            className={location.pathname == item.path ? classes.active : null}
-                        >
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.text} />
-                        </ListItem>
-                    ))}
-                </List>
-
-
-            </Drawer>
-
-            <div className={classes.page}>
-                {children}
             </div>
-        </div>
+        </ThemeProvider>
     )
 }
