@@ -19,15 +19,15 @@ Recently I started learning Crypto and Blockchain Development. And about a year 
 
 ## TODO
 Front-end:
--[] Homepage (Marketplace)
--[X] Bears Factory (Creation of Bears)
--[] Profile (all NFT's that user owns)
--[] Breed (Page for breeding cats)
+- [ ] [Homepage (Marketplace)]
+- [X] [Bears Factory (Creation of Bears)]
+- [ ] [Profile (all NFT's that user owns)]
+- [ ] [Breed (Page for breeding cats)]
 
 Smart Contracts:
--[X] Main Crypto Bears Contract 
--[] Marketplace Contract
--[] Devide Main Contract into small one's
+- [X] [Main Crypto Bears Contract]
+- [ ] [Marketplace Contract]
+- [ ] [Devide Main Contract into small one's]
 
 ## About Crypto Bears
 
