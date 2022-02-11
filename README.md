@@ -32,10 +32,10 @@ Smart Contracts:
 ## About Crypto Bears
 
 Each bear has those properies:
-<img src="./images/properties.jpg" width="300" />
+<img src="./images/properties.jpg" align="left" width="300" />
 
 The genes is a number that consists of 8 digits:
-<img src="./images/DNA.jpg" width="300" />
+<img src="./images/DNA.jpg" align="left" width="300" />
 
 Newly created bears are generation 0. Further bears are breeded from two differet bears and there are a formula for calculation the generation.
 
