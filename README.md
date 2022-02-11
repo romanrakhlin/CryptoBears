@@ -61,7 +61,7 @@ truffle migrate
 
 Finally, you are able to test your app with MetaMask wallet !!
 
-4) Run the Web APp
+4) Run the Web App
 ```
 npm install
 npm start
